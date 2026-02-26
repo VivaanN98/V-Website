@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vivaan Nayak</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 21.3px;
+    }
+
+    body {
+      background: #f1eeeb;
+      color: #3a3530;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      text-align: center;
+      padding: 2rem 1.5rem 8rem;
+      margin-bottom: -14rem;
+    }
+
+    .hero-inner {
+      max-width: 28rem;
+      width: 100%;
+    }
+
+    /* Avatar */
+    .avatar-wrap {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 7.5rem;
+      height: 7.5rem;
+      border-radius: 50%;
+      background: #ffffff;
+      box-shadow: 0 0.1rem 1.2rem rgba(0, 0, 0, 0.06);
+      margin-bottom: 1.8rem;
+      overflow: hidden;
+    }
+
+    .avatar {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+      image-rendering: pixelated;
+    }
+
+    /* Name */
+    h1 {
+      font-family: 'DM Serif Display', Georgia, 'Times New Roman', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      color: #2a2520;
+      margin-bottom: 0.75rem;
+    }
+
+    /* Bio */
+    .bio {
+      font-size: 0.95rem;
+      font-weight: 300;
+      line-height: 1.7;
+      color: #6b6560;
+      margin-bottom: 2rem;
+      max-width: 22rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Social icons row */
+    .socials {
+      display: flex;
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #4a4540;
+      text-decoration: none;
+      transition: color 0.25s ease, transform 0.25s ease;
+    }
+
+    .social-link svg {
+      width: 1.25rem;
+      height: 1.25rem;
+      fill: currentColor;
+    }
+
+    .social-link:hover {
+      color: #1a1510;
+      transform: translateY(-0.15rem);
+    }
+
+
+    /* ── Posts section ── */
+    .posts-section {
+      position: relative;
+      text-align: center;
+      padding: 0 1.5rem 3rem;
+      max-width: 52rem;
+      margin: 0 auto;
+    }
+
+    .divider {
+      width: 2.8rem;
+      height: 1px;
+      background: #c8c2bc;
+      margin: 0 auto 1.2rem;
+    }
+
+    .posts-label {
+      font-size: 0.55rem;
+      font-weight: 400;
+      color: #b0aaa4;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    /* Horizontal card grid */
+    .posts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2.4rem;
+    }
+
+    .post-card {
+      display: flex;
+      flex-direction: column;
+      background: #faf8f6;
+      border: 1px solid #e8e4e0;
+      border-radius: 0.6rem;
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .post-card:hover {
+      border-color: #d0cbc5;
+      box-shadow: 0 0.3rem 1rem rgba(0, 0, 0, 0.06);
+      transform: translateY(-0.15rem);
+    }
+
+    /* Post thumbnails */
+    .post-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+      background: #e4e0dc;
+    }
+
+    .post-body {
+      padding: 0.7rem 0.75rem 0.8rem;
+      text-align: left;
+    }
+
+    .post-hook {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: 0.78rem;
+      font-weight: 400;
+      color: #2a2520;
+      line-height: 1.4;
+      margin-bottom: 0.35rem;
+    }
+
+    .post-text {
+      font-size: 0.62rem;
+      font-weight: 300;
+      line-height: 1.55;
+      color: #6b6560;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .post-source {
+      display: inline-block;
+      font-size: 0.48rem;
+      color: #b0aaa4;
+      margin-top: 0.4rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* Footer */
+    .footer {
+      font-size: 0.55rem;
+      font-weight: 400;
+      color: #b0aaa4;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 700px) {
+      html {
+        font-size: 18px;
+      }
+      .posts {
+        grid-template-columns: 1fr;
+        max-width: 22rem;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .post-thumb {
+        aspect-ratio: 16 / 8;
+      }
+    }
+
+    @media (max-width: 400px) {
+      html {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Hero (viewport-centered) ── -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="avatar-wrap">
+        <img class="avatar" src="vivaan.jpg" alt="Vivaan Nayak" />
+      </div>
+
+      <h1>Vivaan Nayak</h1>
+      <p class="bio">AI enthusiast. Building something cool. Always up for interesting discussions.</p>
+
+      <div class="socials">
+        <!-- Instagram -->
+        <a class="social-link" href="https://www.instagram.com/vivaan_nayak27/" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+          <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <!-- Email -->
+        <a class="social-link" href="mailto:vivaannayak98@gmail.com" aria-label="Email">
+          <svg viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+        <!-- LinkedIn -->
+        <a class="social-link" href="https://www.linkedin.com/in/vivaan-nayak/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <!-- Google Drive -->
+        <a class="social-link" href="https://drive.google.com/drive/folders/1LHp7klT5hV7eeoSTeQMK-Bhux81ilC3L" target="_blank" rel="noopener noreferrer" aria-label="Google Drive">
+          <svg viewBox="0 0 24 24"><path d="M7.71 3.5L1.15 15l2.79 4.86L10.5 8.36 7.71 3.5zm1.6 0l7.1 12.32H24l-2.79-4.86L14.13 3.5H9.31zM8 13.28L5.21 18.14h14.58l2.79-4.86H8z"/></svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── Posts (below the fold) ── -->
+  <section class="posts-section">
+
+    <div class="divider"></div>
+    <p class="posts-label">Top Posts</p>
+
+    <div class="posts">
+
+      <!-- Post 1: Star Wars / Anakin -->
+      <a class="post-card" href="https://www.linkedin.com/posts/vivaan-nayak_starwars-anakin-anakinskywalker-activity-7430846257507684352-9F-B" target="_blank" rel="noopener noreferrer">
+        <img class="post-thumb" src="posts/post1.jpg" alt="Star Wars post" />
+        <div class="post-body">
+          <p class="post-hook">Stop chasing validation.</p>
+          <p class="post-text">Anakin Skywalker was the chosen one. He still couldn't get the Council to see it. Neither can you, and that's the point. Every master knew he was gifted. Even Yoda knew it. The prophecy knew it.</p>
+          <span class="post-source">LinkedIn</span>
+        </div>
+      </a>
+
+      <!-- Post 2: AI & Relationships -->
+      <a class="post-card" href="https://www.linkedin.com/posts/vivaan-nayak_she-said-using-ai-for-our-relationship-was-activity-7430491421763305472-uqEi" target="_blank" rel="noopener noreferrer">
+        <img class="post-thumb" src="posts/post2.jpg" alt="Claude Code post" />
+        <div class="post-body">
+          <p class="post-hook">She said using AI for our relationship was stupid.</p>
+          <p class="post-text">She was right. I was using the wrong AI for the wrong problem. I fed our fights to ChatGPT at 1am. Pasted her texts. Asked for a "perfect response."</p>
+          <span class="post-source">LinkedIn</span>
+        </div>
+      </a>
+
+      <!-- Post 3: Family Guy / Stewie -->
+      <a class="post-card" href="https://www.linkedin.com/posts/vivaan-nayak_familyguy-stewiegriffin-peter-activity-7430468856051048448-eQDf" target="_blank" rel="noopener noreferrer">
+        <img class="post-thumb" src="posts/post3.jpg" alt="Family Guy post" />
+        <div class="post-body">
+          <p class="post-hook">Stewie Griffin is 1 year old and has a 10-year plan. What's your excuse?</p>
+          <p class="post-text">Most builders I know panic about this month's numbers. They forget they have 5 years. And here's the uncomfortable truth: you're probably overestimating what you'll do in the next 30 days. You're almost certainly underestimating what you'll do in the next 5 years.</p>
+          <span class="post-source">LinkedIn</span>
+        </div>
+      </a>
+
+    </div>
+
+    <p class="footer">Bhubaneswar, Odisha, IN</p>
+  </section>
+
+</body>
+</html>
